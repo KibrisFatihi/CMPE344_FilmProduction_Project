@@ -1,0 +1,160 @@
+/* Genel Ayarlar */
+body { 
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+    background: #f0f2f5; 
+    margin: 0; 
+    color: #333;
+    min-height: 100vh;
+}
+
+/* GİRİŞ EKRANI */
+#win-login {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+}
+
+.login-card {
+    background: white;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    width: 350px;
+    text-align: center;
+}
+
+/* PENCERE YAPISI */
+.window { padding: 20px; }
+
+/* Navigasyon Çubuğu */
+.nav-bar {
+    background: white;
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    margin-bottom: 20px;
+}
+
+/* Film Izgarası */
+.movie-grid { 
+    display: grid; 
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); 
+    gap: 25px; 
+    padding: 20px; 
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.movie-card { 
+    background: white; 
+    border-radius: 12px; 
+    cursor: pointer; 
+    overflow: hidden; 
+    transition: transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+.movie-card:hover { transform: translateY(-5px); box-shadow: 0 8px 15px rgba(0,0,0,0.2); }
+.movie-card img { width: 100%; height: 300px; object-fit: cover; }
+.movie-card p { padding: 10px; margin: 0; font-weight: bold; }
+
+/* FORM VE ARŞİV KONTEYNERLARI */
+.form-container, .archive-container {
+    max-width: 800px;
+    margin: 20px auto;
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+.form-body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+#f-preview {
+    width: 150px; height: 220px; 
+    border: 2px solid #ddd; border-radius: 10px;
+    object-fit: cover;
+}
+
+/* INPUT AYARLARI */
+.input-fields { width: 100%; max-width: 500px; text-align: left; }
+.input-group { margin-bottom: 12px; }
+label { display: block; margin-bottom: 5px; font-weight: 600; font-size: 14px; }
+
+input { 
+    display: block; padding: 10px; width: 100%; 
+    box-sizing: border-box; border: 1px solid #ccc; 
+    border-radius: 6px; font-size: 14px;
+}
+
+input[readonly] { background-color: #e9ecef; cursor: not-allowed; color: #495057; }
+
+/* --- DİNAMİK SATIRLAR (Cast & Locations Yönetimi) --- */
+.dynamic-row {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+    width: 100%;
+}
+
+.dynamic-row input {
+    flex: 1; /* Kutuların eşit büyümesini sağlar */
+    padding: 8px;
+    font-size: 13px;
+}
+
+/* SİLME BUTONU (X) */
+.dynamic-row button {
+    background: #e74c3c !important;
+    padding: 5px 12px !important;
+    font-size: 14px;
+}
+
+#cast-list li, #location-list li {
+    padding: 10px 15px;
+    background: #f8f9fa;
+    margin-bottom: 8px;
+    border-radius: 6px;
+    border-left: 5px solid #2874A6;
+    font-size: 14px;
+    color: #333;
+    text-align: left;
+}
+
+h4 { border-bottom: 1px solid #eee; padding-bottom: 5px; font-size: 16px; width: 100%; text-align: left; }
+
+/* BUTONLAR */
+button { 
+    padding: 10px 20px; cursor: pointer; 
+    background: #2874A6; color: white; 
+    border: none; border-radius: 6px; 
+    font-weight: bold; transition: background 0.3s;
+}
+
+button:hover { background: #1F618D; }
+.btn-logout { background: #c0392b; }
+.btn-logout:hover { background: #a93226; }
+
+.form-actions {
+    width: 100%; display: flex;
+    justify-content: center; margin-top: 20px;
+}
+
+#submit-btn { width: 200px; background: #212F3D; }
+
+/* ARŞİV TABLOSU */
+.table-wrapper { margin-top: 20px; overflow-x: auto; border-radius: 8px; border: 1px solid #eee; }
+table { width: 100%; border-collapse: collapse; }
+th, td { padding: 15px; text-align: left; border-bottom: 1px solid #eee; }
+th { background-color: #2c3e50; color: white; text-transform: uppercase; font-size: 13px; }
+.btn-archive { background: #7f8c8d; }
